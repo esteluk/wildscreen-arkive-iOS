@@ -33,8 +33,38 @@ class PhotoQueue {
     func nextImage() -> ImageHolder? {
         return queue.first
     }
+    
+    func like() -> Void {
+        if let image = queue.first!.image {
+            network.upvote(image.id)
+        }
+        
+        next()
+    }
+    
+    func dislike() -> Void {
+        if let image = queue.first!.image {
+            network.downvote(image.id)
+        }
+        next()
+    }
+    
+    func next() {
+        queue.removeAtIndex(0)
+        
+        if count(queue) > 0 {
+            delegate?.queueLoaded()
+        } else {
+            delegate?.queueEmpty()
+        }
+        
+        if count(queue) < 5 {
+//            morePhotos()
+        }
+    }
 }
 
 protocol PhotoQueueProtocol {
     func queueLoaded()
+    func queueEmpty()
 }

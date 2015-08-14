@@ -15,11 +15,23 @@ class Networking {
         Alamofire.request(Router.Animals(10))
             .responseJSON(options: NSJSONReadingOptions.AllowFragments) { (request: NSURLRequest, response: NSHTTPURLResponse?, JSON, error: NSError?) -> Void in
                 // We have the data!
-                println(JSON)
-                
                 if let animals = JSON as? [NSDictionary] {
                     completion(data: animals)
                 }
+        }
+    }
+    
+    func upvote(id: Int) {
+        Alamofire.request(Router.Upvote(id))
+            .response { (_, _, data, _) -> Void in
+                println(data)
+            }
+    }
+    
+    func downvote(id: Int) {
+        Alamofire.request(Router.Downvote(id))
+            .response { (_, _, data, _) -> Void in
+                println(data)
         }
     }
     
@@ -27,11 +39,17 @@ class Networking {
         static let baseURLString = "http://wildscreenanimalsapi.azurewebsites.net/api/"
         
         case Animals(Int)
+        case Upvote(Int)
+        case Downvote(Int)
         
         var method: Alamofire.Method {
             switch self {
             case .Animals:
                 return .GET
+            case .Upvote:
+                return .POST
+            case .Downvote:
+                return .POST
             }
         }
         
@@ -39,6 +57,10 @@ class Networking {
             switch self {
             case .Animals(let limit):
                 return "/animals/getrandom/\(limit)"
+            case .Upvote(let id):
+                return "/animals/upvote/\(id)"
+            case .Downvote(let id):
+                return "/animals/downvote/\(id)"
             }
         }
         

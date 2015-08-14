@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import SDWebImage
 
 class PhotoQueue {
     var network = Networking()
     var queue = [ImageHolder]()
+    let imageFetcher = SDWebImagePrefetcher.sharedImagePrefetcher()
     
     var delegate: PhotoQueueProtocol?
     
@@ -23,7 +25,12 @@ class PhotoQueue {
         // Get some more photos from the network
         network.animals ({ (data) -> Void in
             for a in data {
-                self.queue.append(ImageHolder(dictionary: a))
+                let i = ImageHolder(dictionary: a)
+                self.queue.append(i)
+                
+                if let url = i.image!.imageUrl {
+                    self.imageFetcher.prefetchURLs([url])
+                }
             }
             
             self.delegate?.queueLoaded()

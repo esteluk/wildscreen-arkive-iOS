@@ -18,6 +18,7 @@
 		D88B95DA1B7E21C700D468E5 /* PhotoQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95D91B7E21C700D468E5 /* PhotoQueue.swift */; };
 		D88B95DD1B7E221400D468E5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95DC1B7E221400D468E5 /* Image.swift */; };
 		D88B95DF1B7E22F300D468E5 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95DE1B7E22F300D468E5 /* Animal.swift */; };
+		D88B95E11B7E3D3400D468E5 /* StatsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95E01B7E3D3400D468E5 /* StatsManager.swift */; };
 		F067D2E062755CBD7370ECAB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E17239A0305587CC98F1E94 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		D88B95D91B7E21C700D468E5 /* PhotoQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoQueue.swift; sourceTree = "<group>"; };
 		D88B95DC1B7E221400D468E5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		D88B95DE1B7E22F300D468E5 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
+		D88B95E01B7E3D3400D468E5 /* StatsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StatsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				D88B95D91B7E21C700D468E5 /* PhotoQueue.swift */,
+				D88B95E01B7E3D3400D468E5 /* StatsManager.swift */,
 			);
 			name = Managers;
 			sourceTree = "<group>";
@@ -357,6 +360,7 @@
 				D88B95DF1B7E22F300D468E5 /* Animal.swift in Sources */,
 				D88B95B11B7DF8CE00D468E5 /* Wildscreen.xcdatamodeld in Sources */,
 				D88B95D21B7E1E9E00D468E5 /* Networking.swift in Sources */,
+				D88B95E11B7E3D3400D468E5 /* StatsManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

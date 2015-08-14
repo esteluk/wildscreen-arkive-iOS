@@ -12,6 +12,7 @@ import SDWebImage
 class PhotoQueue {
     var network = Networking()
     var queue = [ImageHolder]()
+    var stats = StatsManager()
     let imageFetcher = SDWebImagePrefetcher.sharedImagePrefetcher()
     
     var delegate: PhotoQueueProtocol?
@@ -48,6 +49,7 @@ class PhotoQueue {
             network.upvote(image.imageId)
         }
         
+        stats.upvoteCount++
         next()
     }
     
@@ -55,6 +57,7 @@ class PhotoQueue {
         if let image = queue.first!.image {
             network.downvote(image.imageId)
         }
+        stats.downvoteCount++
         next()
     }
     

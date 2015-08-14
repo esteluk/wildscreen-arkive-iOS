@@ -14,6 +14,11 @@
 		D88B95B81B7DF8CE00D468E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D88B95B71B7DF8CE00D468E5 /* Images.xcassets */; };
 		D88B95BB1B7DF8CE00D468E5 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D88B95B91B7DF8CE00D468E5 /* LaunchScreen.xib */; };
 		D88B95C71B7DF8CE00D468E5 /* WildscreenTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95C61B7DF8CE00D468E5 /* WildscreenTests.swift */; };
+		D88B95D21B7E1E9E00D468E5 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95D11B7E1E9E00D468E5 /* Networking.swift */; };
+		D88B95DA1B7E21C700D468E5 /* PhotoQueue.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95D91B7E21C700D468E5 /* PhotoQueue.swift */; };
+		D88B95DD1B7E221400D468E5 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95DC1B7E221400D468E5 /* Image.swift */; };
+		D88B95DF1B7E22F300D468E5 /* Animal.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88B95DE1B7E22F300D468E5 /* Animal.swift */; };
+		F067D2E062755CBD7370ECAB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E17239A0305587CC98F1E94 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +32,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E17239A0305587CC98F1E94 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9058336F662A19F766A45A65 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		D0AE26BBBAB399B7A409AFCE /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		D88B95A81B7DF8CE00D468E5 /* Wildscreen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Wildscreen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88B95AC1B7DF8CE00D468E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D88B95AD1B7DF8CE00D468E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +46,10 @@
 		D88B95C01B7DF8CE00D468E5 /* WildscreenTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WildscreenTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D88B95C51B7DF8CE00D468E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D88B95C61B7DF8CE00D468E5 /* WildscreenTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WildscreenTests.swift; sourceTree = "<group>"; };
+		D88B95D11B7E1E9E00D468E5 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		D88B95D91B7E21C700D468E5 /* PhotoQueue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoQueue.swift; sourceTree = "<group>"; };
+		D88B95DC1B7E221400D468E5 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		D88B95DE1B7E22F300D468E5 /* Animal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F067D2E062755CBD7370ECAB /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +71,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		98E2FA43871F732D22263000 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D0AE26BBBAB399B7A409AFCE /* Pods.debug.xcconfig */,
+				9058336F662A19F766A45A65 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		9C07D6AD8ABD514357923449 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E17239A0305587CC98F1E94 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D88B959F1B7DF8CE00D468E5 = {
 			isa = PBXGroup;
 			children = (
 				D88B95AA1B7DF8CE00D468E5 /* Wildscreen */,
 				D88B95C31B7DF8CE00D468E5 /* WildscreenTests */,
 				D88B95A91B7DF8CE00D468E5 /* Products */,
+				98E2FA43871F732D22263000 /* Pods */,
+				9C07D6AD8ABD514357923449 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,11 +111,13 @@
 		D88B95AA1B7DF8CE00D468E5 /* Wildscreen */ = {
 			isa = PBXGroup;
 			children = (
+				D88B95D51B7E211000D468E5 /* Assets */,
+				D88B95D31B7E210000D468E5 /* Controllers */,
+				D88B95D61B7E214800D468E5 /* Managers */,
+				D88B95DB1B7E21FA00D468E5 /* Models */,
+				D88B95D01B7E1E9300D468E5 /* Network */,
+				D88B95D41B7E210700D468E5 /* UI */,
 				D88B95AD1B7DF8CE00D468E5 /* AppDelegate.swift */,
-				D88B95B21B7DF8CE00D468E5 /* ViewController.swift */,
-				D88B95B41B7DF8CE00D468E5 /* Main.storyboard */,
-				D88B95B71B7DF8CE00D468E5 /* Images.xcassets */,
-				D88B95B91B7DF8CE00D468E5 /* LaunchScreen.xib */,
 				D88B95AF1B7DF8CE00D468E5 /* Wildscreen.xcdatamodeld */,
 				D88B95AB1B7DF8CE00D468E5 /* Supporting Files */,
 			);
@@ -115,6 +149,56 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D88B95D01B7E1E9300D468E5 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D88B95D11B7E1E9E00D468E5 /* Networking.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		D88B95D31B7E210000D468E5 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D88B95B21B7DF8CE00D468E5 /* ViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D88B95D41B7E210700D468E5 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				D88B95B41B7DF8CE00D468E5 /* Main.storyboard */,
+				D88B95B91B7DF8CE00D468E5 /* LaunchScreen.xib */,
+			);
+			name = UI;
+			sourceTree = "<group>";
+		};
+		D88B95D51B7E211000D468E5 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				D88B95B71B7DF8CE00D468E5 /* Images.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		D88B95D61B7E214800D468E5 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D88B95D91B7E21C700D468E5 /* PhotoQueue.swift */,
+			);
+			name = Managers;
+			sourceTree = "<group>";
+		};
+		D88B95DB1B7E21FA00D468E5 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D88B95DC1B7E221400D468E5 /* Image.swift */,
+				D88B95DE1B7E22F300D468E5 /* Animal.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +206,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D88B95CA1B7DF8CE00D468E5 /* Build configuration list for PBXNativeTarget "Wildscreen" */;
 			buildPhases = (
+				E8123A57C030286E2B70F232 /* Check Pods Manifest.lock */,
 				D88B95A41B7DF8CE00D468E5 /* Sources */,
 				D88B95A51B7DF8CE00D468E5 /* Frameworks */,
 				D88B95A61B7DF8CE00D468E5 /* Resources */,
+				26A803BE673E0E3D6C9067BF /* Embed Pods Frameworks */,
+				417BFDE747DE07DB44B13D33 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -210,14 +297,66 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		26A803BE673E0E3D6C9067BF /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		417BFDE747DE07DB44B13D33 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E8123A57C030286E2B70F232 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D88B95A41B7DF8CE00D468E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D88B95B31B7DF8CE00D468E5 /* ViewController.swift in Sources */,
+				D88B95DD1B7E221400D468E5 /* Image.swift in Sources */,
+				D88B95DA1B7E21C700D468E5 /* PhotoQueue.swift in Sources */,
 				D88B95AE1B7DF8CE00D468E5 /* AppDelegate.swift in Sources */,
+				D88B95DF1B7E22F300D468E5 /* Animal.swift in Sources */,
 				D88B95B11B7DF8CE00D468E5 /* Wildscreen.xcdatamodeld in Sources */,
+				D88B95D21B7E1E9E00D468E5 /* Networking.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +483,7 @@
 		};
 		D88B95CB1B7DF8CE00D468E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D0AE26BBBAB399B7A409AFCE /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wildscreen/Info.plist;
@@ -354,6 +494,7 @@
 		};
 		D88B95CC1B7DF8CE00D468E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9058336F662A19F766A45A65 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Wildscreen/Info.plist;
@@ -415,6 +556,7 @@
 				D88B95CC1B7DF8CE00D468E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D88B95CD1B7DF8CE00D468E5 /* Build configuration list for PBXNativeTarget "WildscreenTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +565,7 @@
 				D88B95CF1B7DF8CE00D468E5 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

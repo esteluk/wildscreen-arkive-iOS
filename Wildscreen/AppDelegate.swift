@@ -19,8 +19,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
+        // Init parse
         Parse.setApplicationId("fV6QKO7mHUXOixMrdwuq8gNCNC0Cckvp7jLwLY2o",
             clientKey: "OtPZuv7O6ojLKU1NKb4VWax5fOyiYRo6EwT50qeW")
+        
+        if application.applicationState != UIApplicationState.Background {
+            // Track and app open here if we launch with a push
+            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
+            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
+            var pushPayload = false
+            
+            if let options = launchOptions {
+                pushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil
+            }
+            if (preBackgroundPush || oldPushHandlerOnly || pushPayload) {
+                PFAnalytics.trackAppOpenedWithLaunchOptionsInBackground(launchOptions, block: nil)
+            }
+        }
+        
+        if application.respondsToSelector("registerUserNotificationSettings:") {
+            let userNotificationTypes = UIUserNotificationType.Alert | UIUserNotificationType.Badge | UIUserNotificationType.Sound
+            let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
+            application.registerUserNotificationSettings(settings)
+            application.registerForRemoteNotifications()
+        } else {
+            application.registerUserNotificationSettings(UIUserNotificationSettings(forTypes: (.Sound | .Badge), categories: nil))
+        }
         
         return true
     }
@@ -47,6 +71,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // MARK: - Push notifications
+    
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+        let installation = PFInstallation.currentInstallation()
+        installation.setDeviceTokenFromData(deviceToken)
+        installation.saveInBackgroundWithBlock(nil)
+    }
+    
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        if error.code == 3010 {
+            
+        }
+    }
+    
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+        PFPush.handlePush(userInfo)
+        if application.applicationState == UIApplicationState.Inactive {
+            PFAnalytics.trackAppOpenedWithRemoteNotificationPayloadInBackground(userInfo, block: nil)
+        }
     }
 
     // MARK: - Core Data stack

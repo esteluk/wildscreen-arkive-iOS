@@ -12,7 +12,7 @@ class Image {
     var animalId: Int?
     var createdOn: NSDate?
     var downVotes: Int = 0
-    var id: Int = 0
+    var imageId: Int = 0
     var imageUrl: String?
     var name: String?
     var upVotes: Int = 0
@@ -21,6 +21,7 @@ class Image {
         self.animalId = dict.objectForKey("Animal_Id") as? Int
         self.name = dict.objectForKey("Name") as? String
         self.imageUrl = dict.objectForKey("ImageUrl") as? String
+        self.imageId = dict.objectForKey("Id") as! Int
         
         return self
     }

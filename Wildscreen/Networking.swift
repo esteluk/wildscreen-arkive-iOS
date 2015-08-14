@@ -23,15 +23,13 @@ class Networking {
     
     func upvote(id: Int) {
         Alamofire.request(Router.Upvote(id))
-            .response { (_, _, data, _) -> Void in
-                println(data)
+            .responseString { (_, _, data, _) -> Void in
             }
     }
     
     func downvote(id: Int) {
         Alamofire.request(Router.Downvote(id))
             .response { (_, _, data, _) -> Void in
-                println(data)
         }
     }
     

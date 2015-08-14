@@ -24,15 +24,17 @@ class PhotoQueue {
         
         // Get some more photos from the network
         network.animals ({ (data) -> Void in
+            var urls = [String]()
             for a in data {
                 let i = ImageHolder(dictionary: a)
                 self.queue.append(i)
                 
                 if let url = i.image!.imageUrl {
-                    self.imageFetcher.prefetchURLs([url])
+                    urls.append(url)
                 }
             }
             
+            self.imageFetcher.prefetchURLs(urls)
             self.delegate?.queueLoaded()
         })
     }
@@ -43,7 +45,7 @@ class PhotoQueue {
     
     func like() -> Void {
         if let image = queue.first!.image {
-            network.upvote(image.id)
+            network.upvote(image.imageId)
         }
         
         next()
@@ -51,7 +53,7 @@ class PhotoQueue {
     
     func dislike() -> Void {
         if let image = queue.first!.image {
-            network.downvote(image.id)
+            network.downvote(image.imageId)
         }
         next()
     }
@@ -66,7 +68,7 @@ class PhotoQueue {
         }
         
         if count(queue) < 5 {
-//            morePhotos()
+            morePhotos()
         }
     }
 }

@@ -60,8 +60,8 @@
                                     <constraint firstAttribute="trailing" secondItem="2ue-Sk-Sl5" secondAttribute="trailing" constant="20" symbolic="YES" id="yHt-DB-yjL"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6I-n7-uqz">
-                                <rect key="frame" x="56" y="116" width="488" height="388"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6I-n7-uqz">
+                                <rect key="frame" x="16" y="116" width="568" height="388"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kcu-so-6Ur">
                                 <rect key="frame" x="56" y="40" width="489" height="39"/>
@@ -76,7 +76,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iX3-k3-WZP">
-                                <rect key="frame" x="56" y="512" width="240" height="80"/>
+                                <rect key="frame" x="16" y="512" width="280" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="88" id="Dcx-EB-66c"/>
                                     <constraint firstAttribute="height" constant="80" id="b4z-0U-ant"/>
@@ -95,7 +95,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TGP-jr-w4N">
-                                <rect key="frame" x="304" y="512" width="240" height="80"/>
+                                <rect key="frame" x="304" y="512" width="280" height="80"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <state key="normal" title="Like">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -120,10 +120,10 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="p6I-n7-uqz" secondAttribute="bottom" constant="40" id="Yme-kX-g86"/>
                             <constraint firstItem="ArZ-e6-jh9" firstAttribute="top" secondItem="Kcu-so-6Ur" secondAttribute="bottom" constant="8" symbolic="YES" id="gVk-OG-etH"/>
                             <constraint firstAttribute="centerY" secondItem="p6I-n7-uqz" secondAttribute="centerY" id="jD7-I3-bOu"/>
-                            <constraint firstItem="p6I-n7-uqz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="na2-4m-Ozd"/>
+                            <constraint firstItem="p6I-n7-uqz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="na2-4m-Ozd"/>
                             <constraint firstItem="TGP-jr-w4N" firstAttribute="top" secondItem="iX3-k3-WZP" secondAttribute="top" id="o9k-SF-mfk"/>
                             <constraint firstAttribute="centerX" secondItem="ArZ-e6-jh9" secondAttribute="centerX" id="oSl-D1-4fi"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="p6I-n7-uqz" secondAttribute="trailing" constant="40" id="qKZ-kq-ko8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p6I-n7-uqz" secondAttribute="trailing" id="qKZ-kq-ko8"/>
                             <constraint firstItem="p6I-n7-uqz" firstAttribute="top" secondItem="ArZ-e6-jh9" secondAttribute="bottom" constant="8" symbolic="YES" id="rPt-mc-UT7"/>
                             <constraint firstItem="sHH-6n-4Jm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="40" id="rwN-YW-0Me"/>
                             <constraint firstItem="iX3-k3-WZP" firstAttribute="leading" secondItem="p6I-n7-uqz" secondAttribute="leading" id="rym-FZ-EQh"/>
